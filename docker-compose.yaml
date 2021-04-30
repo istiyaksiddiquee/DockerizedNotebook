@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  ds-docker:
+    container_name: ipynb-in-docker
+    image: istiyaksiddiquee/ipynb-in-docker:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: root
+    environment:
+      - GRANT_SUDO=yes
+    ports:
+    - 8888:8888
